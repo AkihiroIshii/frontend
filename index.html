@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+      <meta charset="UTF-8" />
+      <title>積分</title>
+      <link rel="stylesheet" href="main.css">
+      
+      <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>  
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.min.js"></script>
+      <script src="main.js"></script>
+  </head>
+  <body>
+    <h2>積分の意味</h2>
+    <div>
+      <p>まず、積分の定義は次のようになっています。</p>
+      \begin{align}
+        \int_{a}^{b} f(x)dx = \lim_{n \to \infty} \sum_{k=1}^n f(x_k) \Delta ・・・(式1)
+      \end{align}
+      <p>右辺の意味をわかりやすくするために、次のような数直線を考えます。</p>
+      <img src="images/number_line.png" width=500 height=100>
+      <p>積分する範囲をn等分し、1区間の幅を\( \Delta(=\frac{b-a}{n}) \)とします。</p>
+      <p>このとき、(式1)の右辺の和は、n=10のとき、</p>
+      \begin{align}
+        \sum_{k=1}^{10} f(x_k)\Delta = f(x_1)\Delta + f(x_2)\Delta + ・・・ + f(x_{10})\Delta　・・・(式2)
+      \end{align}
+      <p>となり、下図の長方形の和になります。</p>
+      <img src="images/graph.png" width=500 height=200>
+    </div>
+    <h2>計算</h2>
+    <h3>設定</h3>
+    <div>
+      <p>パラメータを設定して、右辺の値を計算してみましょう。</p>
+      <form class="cal-form" action="" method="post">
+        <!--
+        <label for="formula">\( f(x) = \)</label>
+        <input type="text" id="formula">
+        <br>
+        -->
+        \(f(x) = \sqrt{x} \)<br>
+        
+        <label for="para_a">\( a = \)</label>
+        <input type="text" id="para_a" value=0>
+        <br>
+        
+        <label for="para_b">\( b = \)</label>
+        <input type="text" id="para_b" value=10>
+        <br>
+        
+        <label for="para_n">\( n = \)</label>
+        <input type="text" id="para_n" value=10>
+        <br>
+        
+        <input type="submit" value="計算">
+      </form>
+    </div>
+    
+    <!-- 初期描画時は隠しておく -->
+    <h3>実際の答え</h3>
+    <div id="result_int">
+      \( \int_{a}^{b} f(x)dx = \int_{0}^{10} \sqrt{x} dx \simeq 21.08 \)
+    </div>
+    <h3>(式2)の値</h3>
+    <div id=result_sum>
+      \( \sum_{k=1}^{n} f(x_k)\Delta \)
+      <div id="ans_sum"></div>
+    </div>
+    ※結果のグラフを重ねて表示したい
+    
+  </body>
+</html>
