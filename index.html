@@ -7,7 +7,7 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.min.js"></script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>  
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     <script src="main.js"></script>
   </head>
@@ -40,27 +40,29 @@
         <br>
         -->
         \(f(x) = \sqrt{x} \)<br>
-        
+
         <label for="para_a">\( a = \)</label>
         <input type="text" id="para_a" value=0>
         <br>
-        
+
         <label for="para_b">\( b = \)</label>
         <input type="text" id="para_b" value=10>
         <br>
-        
+
         <label for="para_n">\( n = \)</label>
         <input type="text" id="para_n" value=5>
         <br>
-        
+
         <input type="submit" value="計算">
       </form>
     </div>
-    
+
     <!-- 初期描画時は隠しておく -->
     <h3>実際の答え</h3>
     <div id="result_int">
-      \( \int_{a}^{b} f(x)dx = \int_{0}^{10} \sqrt{x} dx \simeq 21.08 \)
+<!--      \( \int_{a}^{b} f(x)dx = \int_{0}^{10} \sqrt{x} dx \simeq 21.08 \)-->
+      \( \int_{a}^{b} f(x)dx = \)
+      <div id="genmitsu-kai"></div>
     </div>
     <h3>(式2)の値</h3>
     <div id=result_sum>
