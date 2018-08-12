@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="ja">
   <head>
-      <meta charset="UTF-8" />
-      <title>積分</title>
-      <link rel="stylesheet" href="main.css">
-      
-      <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>  
-      <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.min.js"></script>
-      <script src="main.js"></script>
+    <meta charset="UTF-8" />
+    <title>積分</title>
+    <link rel="stylesheet" href="main.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.1.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/5.0.4/math.min.js"></script>
+    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>  
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="main.js"></script>
   </head>
   <body>
     <h2>積分の意味</h2>
@@ -31,6 +32,7 @@
     <h3>設定</h3>
     <div>
       <p>パラメータを設定して、右辺の値を計算してみましょう。</p>
+      <p>n=5、n=10、n=20と変化をみてみましょう。</p>
       <form class="cal-form" action="" method="post">
         <!--
         <label for="formula">\( f(x) = \)</label>
@@ -48,7 +50,7 @@
         <br>
         
         <label for="para_n">\( n = \)</label>
-        <input type="text" id="para_n" value=10>
+        <input type="text" id="para_n" value=5>
         <br>
         
         <input type="submit" value="計算">
@@ -65,7 +67,6 @@
       \( \sum_{k=1}^{n} f(x_k)\Delta \)
       <div id="ans_sum"></div>
     </div>
-    ※結果のグラフを重ねて表示したい
-    
+    <canvas id="myChart"></canvas>
   </body>
 </html>
