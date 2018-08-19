@@ -49,6 +49,8 @@ $(function() {
     }
     // 厳密解をhtmlに表示
     $("#genmitsu-kai").html("\\( \\int_{" + a + "}^{" + b + "} \\sqrt{x} dx \\simeq " + round(area_sum1, 2) + "\\)")
+    // MathJax.Hub.Typeset($("#genmitsu-kai"), function() { console.log("Done"); });
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"genmitsu-kai"]);
 
     // 級数和
     for ( var i = 1; i <= n; i++ ) {
@@ -67,6 +69,7 @@ $(function() {
       }
     }
     $("#ans_sum").html("\\( \\simeq " + str_buff + "\\) \n" + "\\( = " + round(area_sum2, 2).toString() + "\\)");
+    MathJax.Hub.Queue(["Typeset",MathJax.Hub,"ans_sum"]);
 
     // 計算してグラフを書く関数を呼ぶ
     var ctx = document.getElementById('myChart').getContext('2d');
